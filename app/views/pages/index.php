@@ -4,50 +4,29 @@
     <img src="./public/img/logoBlack.svg" alt="Logo" style="margin-bottom: 50px" width="300" height="100">
     <!-- <h1 class="display-3"><?php echo $data['title']; ?></h1> -->
     <!-- <p class="lead"><?php echo $data['description']; ?></p> -->
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./public/img/office1.jpg" class="d-block w-100" alt="Innovation slide"
-          style="filter: brightness(50%);">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Innovation</h5>
-          <p> Embracing new ideas and technology to develop better products and services that meet the changing needs
-            of customers.</p>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./public/img/office1.jpg" class="d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img src="./public/img/office2.jpg" class="d-block w-100" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="./public/img/office3.jpg" class="d-block w-100" alt="Slide 3">
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="./public/img/office2.jpg" class="d-block w-100" alt="Diversity and Inclusion slide"
-          style="filter: brightness(50%);">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Diversity and Inclusion</h5>
-          <p>Creating a welcoming, supportive, and respectful workplace culture that values and celebrates the
-            differences in people and ensures equal opportunities for all.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./public/img/office3.jpg" class="d-block w-100" alt="Integrity slide"
-          style="filter: brightness(50%);">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Integrity</h5>
-          <p>Operating with transparency, fairness, and accountability, and upholding the highest standards of ethical
-            behavior to build and maintain trust with customers, employees, and stakeholders.</p>
-        </div>
-      </div>
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div>
-</div>
+
 </div>
 <!--Main layout-->
 <main class="mt-5">
