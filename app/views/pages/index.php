@@ -1,9 +1,9 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 <div class="jumbotron jumbotron-flud text-center">
   <div class="container">
-    <img src="./public/img/logoBlack.svg" alt="Logo" width="300" height="100">
+    <img src="./public/img/logoBlack.svg" alt="Logo" style="margin-bottom: 50px" width="300" height="100">
     <!-- <h1 class="display-3"><?php echo $data['title']; ?></h1> -->
-    <p class="lead"><?php echo $data['description']; ?></p>
+    <!-- <p class="lead"><?php echo $data['description']; ?></p> -->
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -81,24 +81,23 @@
 
     <!--Section: Content-->
     <section class="text-center">
-      <h4 class="mb-5"><strong>Facilis consequatur eligendi</strong></h4>
+      <h4 class="mb-5"><strong>Values</strong></h4>
 
       <div class="row">
         <div class="col-lg-4 col-md-12 mb-4">
           <div class="card">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+              <img src="./public/img/card1.jpg" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Innvation</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
+                Embracing new ideas and technology to develop better products and services that meet the changing needs
+                of customers.
               </p>
-              <a href="#!" class="btn btn-primary">Button</a>
             </div>
           </div>
         </div>
@@ -106,18 +105,18 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/023.jpg" class="img-fluid" />
+              <img src="./public/img/card2.jpg" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Diversity and Inclusion</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
+                </h5>
+              <p>Creating a welcoming, supportive, and respectful workplace culture that values and celebrates the
+                differences in people and ensures equal opportunities for all.
               </p>
-              <a href="#!" class="btn btn-primary">Button</a>
             </div>
           </div>
         </div>
@@ -125,18 +124,19 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
+              <img src="./public/img/card4.jpg" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Integrity</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
+                </h5>
+              <p>Operating with transparency, fairness, and accountability, and upholding the highest standards of
+                ethical
+                behavior to build and maintain trust with customers, employees, and stakeholders.
               </p>
-              <a href="#!" class="btn btn-primary">Button</a>
             </div>
           </div>
         </div>
