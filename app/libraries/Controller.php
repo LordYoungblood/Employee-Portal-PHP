@@ -6,8 +6,11 @@
   class Controller {
     // Load model
     public function model($model){
-      // Require model file
-      require_once '../app/models/' . $model . '.php';
+	    // Require model file
+	    //$model_path = './app/model/' . $model . '.php' ;
+	    //require_once '.././app/model/' . $model . '.php';
+	   require_once '.././app/model/Users.php';
+
 
       // Instatiate model
       return new $model();
