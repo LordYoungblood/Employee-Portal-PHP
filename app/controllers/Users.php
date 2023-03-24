@@ -87,6 +87,13 @@ class Users extends Controller
     }
   }
 
+  public function logout()
+{
+  unset($_SESSION['user_id']);
+  session_destroy();
+  header('Location: ' . URLROOT . '/users/login');
+}
+
   public function register()
   {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -177,4 +184,6 @@ class Users extends Controller
       $this->view('users/register', $data);
     }
   }
+
+  
 }
