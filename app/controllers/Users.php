@@ -88,11 +88,11 @@ class Users extends Controller
   }
 
   public function logout()
-{
-  unset($_SESSION['user_id']);
-  session_destroy();
-  header('Location: ' . URLROOT . '/users/login');
-}
+  {
+    unset($_SESSION['user_id']);
+    session_destroy();
+    header('Location: ' . URLROOT . '/users/login');
+  }
 
   public function register()
   {
@@ -185,5 +185,21 @@ class Users extends Controller
     }
   }
 
-  
+  public function profile()
+  {
+    // Check if user is logged in
+    if (!isset($_SESSION['user_id'])) {
+      header('Location: ' . URLROOT . '/users/login');
+      exit();
+    }
+
+    $user = $this->userModel->getUserById($_SESSION['user_id']);
+
+    $data = [
+      'title' => 'Profile',
+      'user' => $user
+    ];
+
+    $this->view('pages/profile', $data);
+  }
 }

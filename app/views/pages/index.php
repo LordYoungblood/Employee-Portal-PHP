@@ -72,7 +72,7 @@
               </a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Innvation</h5>
+              <h5 class="card-title">Innovation</h5>
               <p class="card-text">
                 Embracing new ideas and technology to develop better products and services that meet the changing needs
                 of customers.
