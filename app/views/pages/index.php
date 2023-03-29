@@ -1,6 +1,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 <div class="jumbotron jumbotron-flud text-center">
   <div class="container">
+
     <img src="./public/img/logoBlack.svg" alt="Logo" style="margin-bottom: 50px" width="300" height="100">
     <!-- <h1 class="display-3"><?php echo $data['title']; ?></h1> -->
     <!-- <p class="lead"><?php echo $data['description']; ?></p> -->

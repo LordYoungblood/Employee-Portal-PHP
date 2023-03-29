@@ -202,4 +202,82 @@ class Users extends Controller
 
     $this->view('pages/profile', $data);
   }
+  public function edit()
+  {
+    // Check if user is logged in
+    if (!isset($_SESSION['user_id'])) {
+      header('Location: ' . URLROOT . '/users/login');
+      exit();
+    }
+
+    $user = $this->userModel->getUserById($_SESSION['user_id']);
+
+    $data = [
+      'title' => 'Edit Profile',
+      'user' => $user
+    ];
+
+    $this->view('users/edit', $data);
+  }
+
+  public function update()
+  {
+    if (!isset($_SESSION['user_id'])) {
+      header('Location: ' . URLROOT . '/users/login');
+      exit();
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      // Sanitize POST data
+      $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+      // Init data
+      $data = [
+        'id' => $_SESSION['user_id'],
+        'firstName' => trim($_POST['firstName']),
+        'lastName' => trim($_POST['lastName']),
+        'email' => trim($_POST['email']),
+        'address' => trim($_POST['address']),
+        'phone' => trim($_POST['phone']),
+        'salary' => trim($_POST['salary']),
+        'SSN' => trim($_POST['SSN']),
+        'firstName_err' => '',
+        'lastName_err' => '',
+        'email_err' => '',
+        'address_err' => '',
+        'phone_err' => '',
+        'salary_err' => '',
+        'SSN_err' => ''
+      ];
+
+      // Validate fields
+      // Add your validation logic for firstName, lastName, address, phone, salary, and SSN here
+
+      // Validate Email
+      if (empty($data['email'])) {
+        $data['email_err'] = 'Please enter email';
+      } elseif ($this->userModel->findUserByEmail($data['email']) && $this->userModel->getUserById($data['id'])->email != $data['email']) {
+        $data['email_err'] = 'Email is already taken';
+      }
+
+      // Make sure errors are empty
+      if (empty($data['firstName_err']) && empty($data['lastName_err']) && empty($data['email_err']) && empty($data['address_err']) && empty($data['phone_err']) && empty($data['salary_err']) && empty($data['SSN_err'])) {
+        // Validated
+
+        // Update User
+        if ($this->userModel->update($data)) {
+          // Redirect to the profile page
+          header('Location: ' . URLROOT . '/users/profile');
+        } else {
+          die('Something went wrong');
+        }
+      } else {
+        // Load view with errors
+        $this->view('users/edit', $data);
+      }
+    } else {
+      // Redirect to the edit page
+      header('Location: ' . URLROOT . '/users/edit');
+    }
+  }
 }
