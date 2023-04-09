@@ -11,8 +11,32 @@
       <p class="card-text"><strong>Phone:</strong> <?php echo $data['user']->phone; ?></p>
       <p class="card-text"><strong>Salary:</strong> <?php echo $data['user']->salary; ?></p>
       <p class="card-text"><strong>SSN:</strong> <?php echo $data['user']->SSN; ?></p>
-      <a href="<?php echo URLROOT; ?>/users/edit" class="btn btn-secondary mt-2">Edit Profile</a>
+      <a href="<?php echo URLROOT; ?>/users/edit" class="btn btn-primary">Edit Profile</a>
+      <form action="<?php echo URLROOT; ?>/users/delete" method="post" class="d-inline">
+        <input type="submit" value="Delete Profile" class="btn btn-danger" id="delete-profile-btn">
+      </form>
     </div>
   </div>
 </div>
+
+<script>
+  document.getElementById('delete-profile-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    Swal.fire({
+      icon: 'error',
+      title: 'Are you sure you want to delete your profile?',
+      text: 'Once the profile is deleted, it cannot be recovered.',
+      footer: '<a href="<?php echo URLROOT; ?>/pages/contact">Need Assistance</a>',
+      showCancelButton: true,
+      confirmButtonText: 'Delete Profile',
+      cancelButtonText: 'Cancel',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        e.target.form.submit();
+      }
+    });
+  });
+</script>
+
 <?php require APPROOT . '/views/inc/footer.php'; ?>

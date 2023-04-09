@@ -110,7 +110,7 @@ class Users extends Controller
         'address' => trim($_POST['address']),
         'phone' => trim($_POST['phone']),
         'salary' => trim($_POST['salary']),
-        'SSN' => trim($_POST['SSN']),
+        'SSN' => str_replace('-', '', trim($_POST['SSN'])),
         'password' => trim($_POST['password']),
         'confirm_password' => trim($_POST['confirm_password']),
         'firstName_err' => '',
@@ -278,6 +278,31 @@ class Users extends Controller
     } else {
       // Redirect to the edit page
       header('Location: ' . URLROOT . '/users/edit');
+    }
+  }
+
+  public function delete()
+  {
+    // Check if user is logged in
+    if (!isset($_SESSION['user_id'])) {
+      header('Location: ' . URLROOT . '/users/login');
+      exit();
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      if ($this->userModel->deleteUser($_SESSION['user_id'])) {
+        // Unset session and destroy it
+        unset($_SESSION['user_id']);
+        session_destroy();
+
+        // Redirect to the login page
+        header('Location: ' . URLROOT . '/users/login');
+      } else {
+        die('Something went wrong');
+      }
+    } else {
+      // Redirect to the profile page
+      header('Location: ' . URLROOT . '/users/profile');
     }
   }
 }

@@ -92,4 +92,17 @@ class User
       return false;
     }
   }
+
+  public function deleteUser($id)
+  {
+    $this->db->query('DELETE FROM users WHERE id = :id');
+    $this->db->bind(':id', $id);
+
+    // Execute
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

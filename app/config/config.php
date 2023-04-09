@@ -14,4 +14,4 @@ define('SITENAME', 'EmployeePortal');
 // Logo
 define('LOGO', 'public/img/logo.svg');
 // App Version
-define('APPVERSION', '2.0.0');
+define('APPVERSION', '5.0.0');

@@ -1,5 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
-<div class="jumbotron jumbotron-flud text-center">
+<div class="jumbotron jumbotron-fluid text-center">
   <div class="container">
 
     <img src="./public/img/logoBlack.svg" alt="Logo" style="margin-bottom: 50px" width="300" height="100">
@@ -30,7 +30,7 @@
 
 </div>
 <!--Main layout-->
-<main class="mt-5">
+<main class="my-5">
   <div class="container">
     <!--Section: Content-->
     <section>
